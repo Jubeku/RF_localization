@@ -31,18 +31,18 @@ def calc_prob(windowed_st, channels, ydim, xdim, freqID):
         if ch == 'Z':
             direc_comp = 'data/simu/vertZ/'
         elif ch == 'E':
-            direc_comp = 'data/simu/horzX/'
+            direc_comp = 'data/simu/horzE/'
         elif ch == 'N':
-            direc_comp = 'data/simu/horzY/'
+            direc_comp = 'data/simu/horzN/'
         path_simu_ref = direc_comp + ref + '/' 
-        energy_simu_ref = np.loadtxt(path_simu_ref + freqID + '/energy_vz.txt')
+        energy_simu_ref = np.loadtxt(path_simu_ref + freqID + '/energy_Fz.txt')
         energy_simu_ref = np.reshape(energy_simu_ref,(ydim,xdim))
 
         ratios_simu = np.zeros((ydim,xdim,nRatios)) 
         for idxSrc, sta in enumerate(stas_name):
             path_simu = direc_comp  + sta + '/' 
             # Energy
-            energy_simu = np.loadtxt(path_simu + freqID + '/energy_vz.txt')
+            energy_simu = np.loadtxt(path_simu + freqID + '/energy_Fz.txt')
             energy_simu = np.reshape(energy_simu,(ydim,xdim))
             ratios_simu[:,:,idxSrc] = energy_simu/energy_simu_ref
                     
@@ -52,5 +52,9 @@ def calc_prob(windowed_st, channels, ydim, xdim, freqID):
                 for kk in range(nRatios):
                     probs_tw[ii,jj] += 1./nRatios * (
                         np.abs(np.log10(ratios_simu[ii,jj,kk]/ratio_obs[kk])))
+
+    # Probability is defined as inverse of error, normalized by 
+    # number of channels
+    probs_tw = 1./(probs_tw/len(channels))
 
     return(probs_tw)

@@ -1,0 +1,108 @@
+<link href='https://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<style>
+    div.cell{
+        width:700px;
+        margin-left:13%;
+        margin-right:auto;
+    }
+    h1 {
+        font-family: 'Marvel', sans-serif;
+    }
+    h2 {
+        font-family: 'Marvel', sans-serif;
+    }
+    h3 {
+        font-family: 'Marvel', sans-serif;
+        !margin-top: 10px;
+        !margin-bottom: 2px;
+    }
+    h4 {
+        font-family: 'Marvel', sans-serif;
+    }
+    h5 {
+        font-family: 'Marvel', sans-serif;
+    }
+    div.text_cell_render{
+        font-family: 'Open Sans', 'Lato', 'Raleway', sans-serif;
+        line-height: 120%;
+        font-size: 105%;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .CodeMirror{
+        font-family: 'Source Code Pro';
+        font-size: 100%;
+    }
+/*    .prompt{
+        display: None;
+    }*/
+    .text_cell_render h1 {
+        font-weight: 100;
+        font-size: 44pt;
+        line-height: 90%;
+        color: #0168B3;
+        margin-bottom: 0.7em;
+        margin-top: 0.7em;
+        display: block;
+    }
+    .text_cell_render h2 {
+        font-weight: 100;
+        font-size: 24pt;
+        line-height: 100%;
+        color: #799096;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+    .text_cell_render h3 {
+        font-weight: 100;
+        font-size: 20pt;
+        line-height: 100%;
+        color: #bd131c;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+    .text_cell_render h4 {
+        font-weight: 100;
+        font-size: 18pt;
+        line-height: 100%;
+        color: #d64911;
+        margin-bottom: 0.7em;
+        margin-top: 0.7em;
+        display: block;
+    }
+    .text_cell_render h5 {
+        font-weight: 100;
+        font-size: 14pt;
+        color: #88add9;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
+        display: block;
+    }
+    .warning{
+        color: rgb(189, 19,28)
+    }
+</style>
+<script>
+    MathJax.Hub.Config({
+                        TeX: {
+                            extensions: ["AMSmath.js"]
+                        },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                },
+                displayAlign: 'center', 
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 4}}
+                }
+            });
+</script>
+        
+
