@@ -26,6 +26,10 @@ class cd:
 
 def onclick(event):
     
+    """
+    This function is called by pickTW() and writes the picked times to a file. 
+
+    """
     
     if event.button == 3 :
         print('button=%d, xdata=%f' %(event.button, event.xdata))
@@ -39,18 +43,22 @@ def onclick(event):
     return()
 
 
-def pickTW(tr, path_event):
+def pickTW(tr):
     
     """
+    This function allows to interactively pick times on the signal. 
+
+    Input parameters
+    tr:  Seismic signal (Obspy Trace)
 
     """
     
     rc('font', size=12.0)
-    
+
+    # Plot seismic trace
     fig = plt.figure(figsize=(10,4))
     ax  = fig.add_subplot(111)
-    title = ('Click middle mouse button to select start of signal,\n' +
-            ' click right mouse button to select end of signal.')
+    title = ('Successively select start and end time of signal with right mouse button.')
     label = tr.stats.station+'.'+tr.stats.channel[2]
     ax.set_title(title)
     ax.grid()
@@ -70,7 +78,7 @@ def pickTW(tr, path_event):
     plt.gca().xaxis.set_major_locator( MinuteLocator(byminute=range( 0,60, 1)) )
     plt.gca().xaxis.set_major_formatter( DateFormatter('%H:%M:%S') )
     
-    # Start the picking
+    # Start picking
     cid = fig.canvas.mpl_connect('button_press_event', onclick)
 
     plt.show()
