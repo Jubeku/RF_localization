@@ -1,5 +1,7 @@
 # Rockfall localization
 
+[![DOI](https://zenodo.org/badge/217347142.svg)](https://zenodo.org/badge/latestdoi/217347142)
+
 This repository contains an algorithm to localize rockfalls using seismic signals. 
 
 A [Jupyter](https://jupyter.org/) notebook is used to present the localization method. Two exemplary rockfalls which occurred at Dolomieu crater on Piton de la Fournaise volcano, La Réunion, are localized. Downloading the notebook, you can yourself explore the method, interactively pick a time window of the rockfall signal and test the sensitivity of the results in respect to certain parameters. 
